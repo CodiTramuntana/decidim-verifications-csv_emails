@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     decidim-verifications-csv_email (0.0.1.alpha.5)
+      decidim-admin (~> 0.9.3)
       decidim-core (~> 0.9.3)
       decidim-verifications (~> 0.9.3)
       figaro (~> 1.1)
@@ -575,9 +576,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  decidim-admin (~> 0.9.3)
+  decidim (~> 0.9.2)
   decidim-dev (~> 0.9.3)
   decidim-verifications-csv_email!
+  rspec-rails
+
+RUBY VERSION
+   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.1
