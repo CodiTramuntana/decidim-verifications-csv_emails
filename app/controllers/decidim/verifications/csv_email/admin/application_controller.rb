@@ -5,7 +5,6 @@ module Decidim
     module CsvEmail
       module Admin
         class ApplicationController < Decidim::Admin::ApplicationController
-
         end
       end
     end

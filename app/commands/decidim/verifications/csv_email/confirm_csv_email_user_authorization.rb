@@ -4,7 +4,6 @@ module Decidim
   module Verifications
     module CsvEmail
       class ConfirmCsvEmailUserAuthorization < Decidim::Verifications::ConfirmUserAuthorization
-
         def call
           return broadcast(:invalid) unless form.valid?
 

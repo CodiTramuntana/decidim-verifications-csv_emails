@@ -6,7 +6,6 @@ module Decidim
       # A form object to be used when public users want to get verified by
       # CsvEmail verificator
       class CsvEmailForm < AuthorizationHandler
-
         # This is the input (from the user) to validate against
         attribute :email, String
 
@@ -17,12 +16,12 @@ module Decidim
 
         # Checks if the email belongs to the census
         def censed
-          return if (self.email == user.email) && (census_for_user&.email == self.email)
+          return if (email == user.email) && (census_for_user&.email == email)
 
-          if self.email != user.email
-            errors.add(:email, I18n.t('decidim.verifications.csv_email.errors.messages.not_same_email'))
+          if email != user.email
+            errors.add(:email, I18n.t("decidim.verifications.csv_email.errors.messages.not_same_email"))
           else
-            errors.add(:email, I18n.t('decidim.verifications.csv_email.errors.messages.not_in_csv'))
+            errors.add(:email, I18n.t("decidim.verifications.csv_email.errors.messages.not_in_csv"))
           end
         end
 
@@ -32,7 +31,7 @@ module Decidim
 
         def census_for_user
           @census_for_user ||= Decidim::Verifications::CsvEmail::CsvEmailDatum
-                               .search_user_email(organization, self.email)
+                               .search_user_email(organization, email)
         end
 
         def organization

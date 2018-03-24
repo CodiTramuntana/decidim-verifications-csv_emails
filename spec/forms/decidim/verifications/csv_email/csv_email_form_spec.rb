@@ -4,52 +4,63 @@ require "spec_helper"
 
 module Decidim
   module Verifications
-    module GenesysI3
-      describe GenesysI3Form do
-        subject do
-          described_class.new(
-            document_number: document_number,
-            birthdate: birthdate
-          )
-        end
+    module CsvEmail
+      describe CsvEmailForm do
+        subject(:form) { described_class.from_params(attributes).with_context(context) }
+
+        # subject do
+        #   described_class.new(
+        #     email: email
+        #   )
+        # end
 
         let(:user) { create(:user) }
 
-        let(:document_number) { "X0000000F" }
-        let(:birthdate) { Date.new(1973, 1, 18) }
+        let(:email) { "user@example.org" }
 
-        context "when the data is valid with NIE" do
-          it "is valid", genesys_i3_stub_type: :valid do
-            expect(subject).to be_valid
+        let(:attributes) do
+          {
+            email: email
+
+          }
+        end
+
+        context "when is a valid email" do
+          context "when the email is not the same than current user email" do
+            it { is_expected.not_to be_valid }
+            #
+            # it "is not valid" do
+            #   expect(subject).not_to be_valid
+            #   # expect(subject.errors[:email]).to include("Email entered is not the same as the user logged in")
+            # end
+          end
+
+          context "when the email is the same than user" do
+            context "when email exists in csv" do
+              it { is_expected.to be_valid }
+              # it "is valid" do
+              #   expect(subject).to be_valid
+              # end
+            end
+            context "when email not exists in csv" do
+              it { is_expected.not_to be_valid }
+              # it "is not valid" do
+              #   expect(subject).not_to be_valid
+              #   # expect(subject.errors[:email]).to include("We could not find your email in our database of members. If the email entered is correct and the problem persists, please, contact an administrator.")
+              # end
+            end
           end
         end
 
-        context "when the data is valid with DNI" do
-          let(:document_number) { "00000000T" }
+        context "when is an invalid email" do
+          let(:email) { "aaa.cccc" }
 
-          it "is valid", genesys_i3_stub_type: :valid do
-            expect(subject).to be_valid
-          end
-        end
+          it { is_expected.not_to be_valid }
 
-        context "when the document number format is invalid" do
-          let(:document_number) { "XXXXXXXX-Y" }
-
-          it "is not valid" do
-            expect(subject).not_to be_valid
-            expect(subject.errors[:document_number])
-              .to include("Not valid DNI/NIE. Must be all uppercase, contain only letters and/or numbers, and start with a number or letters X, Y or Z.")
-          end
-        end
-
-        context "when the birthdate is blank" do
-          let(:birthdate) { "" }
-
-          it "is not valid" do
-            expect(subject).not_to be_valid
-            expect(subject.errors[:birthdate])
-              .to include("can't be blank")
-          end
+          # it "is not valid" do
+          #   expect(subject).not_to be_valid
+          #   # expect(subject.errors[:email]).to include("We could not find your email in our database of members. If the email entered is correct and the problem persists, please, contact an administrator.")
+          # end
         end
       end
     end

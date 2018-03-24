@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Decidim
   module Verifications
     module CsvEmail
@@ -20,7 +21,7 @@ module Decidim
               data = CsvData.new(params[:file].path)
               CsvEmailDatum.insert_all(current_organization, data.values)
               RemoveDuplicatesJob.perform_later(current_organization)
-              flash[:notice] = t('.success', count: data.values.count,
+              flash[:notice] = t(".success", count: data.values.count,
                                              errors: data.errors.count)
             end
             redirect_to csv_verifications_path
@@ -30,7 +31,7 @@ module Decidim
             authorize! :destroy, CsvEmailDatum
             CsvEmailDatum.clear(current_organization)
 
-            redirect_to csv_verifications_path, notice: t('.success')
+            redirect_to csv_verifications_path, notice: t(".success")
           end
 
           private

@@ -7,7 +7,6 @@ module Decidim
   module Verifications
     module CsvEmail
       class Engine < ::Rails::Engine
-
         isolate_namespace Decidim::Verifications::CsvEmail
 
         routes do
