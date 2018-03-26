@@ -5,8 +5,7 @@ module Decidim
     module CsvEmail
       class CsvEmailDatum < ApplicationRecord
         belongs_to :organization, foreign_key: :decidim_organization_id,
-                                  class_name: "Decidim::Organization",
-                                  inverse_of: :csv_email_datum
+                                  class_name: "Decidim::Organization"
 
         # An organzation scope
         def self.inside(organization)

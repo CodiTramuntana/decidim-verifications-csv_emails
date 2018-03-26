@@ -145,7 +145,7 @@ PATH
 PATH
   remote: .
   specs:
-    decidim-verifications-csv_email (0.11.0.pre)
+    decidim-verifications-csv_email (0.0.1.alpha.6)
       decidim-verifications (= 0.11.0.pre)
       figaro (~> 1.1)
 

@@ -26,11 +26,13 @@ RSpec.describe Decidim::Verifications::CsvEmail::Admin::CsvVerificationsControll
 
   describe "POST #create" do
     context "when importing the csv data" do
-      sign_in user
+      before do
+        sign_in user
 
-      # Don't know why don't prepend with `spec/fixtures` automatically
-      file = fixture_file_upload("spec/fixtures/files/data1.csv")
-      post :create, params: { file: file }
+        # Don't know why don't prepend with `spec/fixtures` automatically
+        file = fixture_file_upload("spec/fixtures/files/data1.csv")
+        post :create, params: { file: file }
+      end
 
       it "expects redirect" do
         expect(response).to have_http_status(:redirect)
@@ -52,10 +54,12 @@ RSpec.describe Decidim::Verifications::CsvEmail::Admin::CsvVerificationsControll
 
   describe "POST #destroy_all" do
     context "when clearing all census data" do
-      sign_in user
+      before do
+        sign_in user
 
-      5.times { FactoryBot.create :csv_email_datum, organization: organization }
-      delete :destroy_all
+        5.times { FactoryBot.create :csv_email_datum, organization: organization }
+        delete :destroy_all
+      end
 
       it "expects redirect" do
         expect(response).to have_http_status(:redirect)
