@@ -14,7 +14,7 @@ It has an admin controller to upload CSV files with the information. When import
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'decidim-verifications-csv_email'
+gem 'decidim-verifications-csv_email', git: 'git@github.com:CodiTramuntana/decidim-verifications-csv_emails.git'
 ```
 
 And then execute:
