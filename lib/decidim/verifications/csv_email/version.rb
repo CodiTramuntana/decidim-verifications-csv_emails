@@ -5,7 +5,7 @@ module Decidim
   module Verifications
     module CsvEmail
       def self.version
-        "0.0.1.beta.2"
+        "0.0.1.beta.3"
       end
     end
   end
