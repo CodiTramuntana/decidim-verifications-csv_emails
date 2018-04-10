@@ -5,6 +5,10 @@ es:
         email: Correo electrónico
   decidim:
     authorization_handlers:
+      admin:
+        csv_email_authorization_handler:
+          help:
+            - Los usuarios ingresan su correo electrónico para ser verificado
       csv_email:
         name: Por correo electrónico
       csv_email_authorization_handler:

@@ -5,6 +5,10 @@ fr:
         email: Email
   decidim:
     authorization_handlers:
+      admin:
+        csv_email_authorization_handler:
+          help:
+            - Les utilisateurs entrent leur email à vérifier
       csv_email:
         name: Par email
       csv_email_authorization_handler:
@@ -46,4 +50,3 @@ fr:
           messages:
             not_in_csv: Nous n'avons pas trouvé votre email dans notre base de données de membres. Si l'e-mail entré est correct et que le problème persiste, contactez un administrateur.
             not_same_email: Le courriel entré n'est pas le même que l'utilisateur connecté
-            
