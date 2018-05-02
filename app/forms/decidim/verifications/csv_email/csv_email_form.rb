@@ -11,7 +11,7 @@ module Decidim
 
         # This is the validation to perform
         # If passed, an authorization is created
-        validates :email, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/
+        validates :email, presence: true, format: Devise::email_regexp
         validate :censed
 
         # Checks if the email belongs to the census
