@@ -9,13 +9,10 @@ module Decidim
         before_action :load_authorization
 
         def new
-          authorize! :create, @authorization
           @form = CsvEmailForm.new
         end
 
         def create
-          authorize! :create, @authorization
-
           @form = CsvEmailForm.from_params(params.merge(user: current_user))
           ConfirmCsvEmailUserAuthorization.call(@authorization, @form) do
             on(:ok) do

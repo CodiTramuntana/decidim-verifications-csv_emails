@@ -16,14 +16,6 @@ module Decidim
 
           root to: "csv_verifications#index"
         end
-
-        initializer "decidim_verifications_csv_emails.add_admin_authorizations" do |_app|
-          Decidim.configure do |config|
-            config.admin_abilities += [
-              "Decidim::Verifications::CsvEmail::Abilities::AdminAbility"
-            ]
-          end
-        end
       end
     end
   end
