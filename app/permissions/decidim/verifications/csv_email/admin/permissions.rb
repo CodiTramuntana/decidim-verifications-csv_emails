@@ -4,7 +4,7 @@ module Decidim
   module Verifications
     module CsvEmail
       module Admin
-        # Defines the abilities related to surveys for a logged in admin user.
+        # Defines the abilities related to csv_email for a logged in admin user.
         class Permissions < Decidim::DefaultPermissions
           def permissions
             return permission_action if permission_action.scope != :admin
