@@ -24,8 +24,6 @@ module Decidim
           user_email = row[0]
           if user_email.present?
             values << row
-          else
-            errors << row
           end
         end
       end
