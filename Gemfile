@@ -7,13 +7,15 @@ ruby RUBY_VERSION
 # Specify your gem's dependencies in kaminari.gemspec
 gemspec
 
-gem "decidim", path: "../"
 
 group :development, :test do
+  gem "faker", "~> 1"
   gem "byebug", "~> 10.0", platform: :mri
+  gem 'bootsnap'
+  gem 'listen'
+  gem 'social-share-button'
 end
 
 group :development do
-  gem "faker", "~> 1.8"
   gem "web-console", "~> 3.5"
 end

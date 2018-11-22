@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email = ["isaac.mg@coditramuntana.com"]
   s.license = "AGPL-3.0"
   s.homepage = "https://github.com/decidim/decidim"
-  s.required_ruby_version = ">= 2.3.0"
+  s.required_ruby_version = ">= 2.5.1"
 
   s.name = "decidim-verifications-csv_email"
   s.summary = "Integration with CSV email verifications"
@@ -18,9 +18,10 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
 
-  s.add_dependency "decidim-verifications", "~> 0.14.1"
-  s.add_dependency "figaro", "~> 1.1"
+  DECIDIM_VERSION= ">= 0.15.0"
+  s.add_dependency "decidim", DECIDIM_VERSION
+  s.add_dependency "decidim-verifications", DECIDIM_VERSION
+  s.add_dependency "decidim-admin", DECIDIM_VERSION
 
-  s.add_development_dependency "decidim-dev", "~> 0.14.1"
-  s.add_development_dependency "decidim-verifications", "~> 0.14.1"
+  s.add_development_dependency "decidim-dev", DECIDIM_VERSION
 end
