@@ -10,7 +10,6 @@ gemspec
 
 group :development, :test do
   gem "faker", "~> 1"
-  # gem "decidim", path: "../"
   gem "byebug", "~> 10.0", platform: :mri
   gem 'bootsnap'
   gem 'listen'
