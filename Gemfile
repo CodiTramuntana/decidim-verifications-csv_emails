@@ -5,8 +5,9 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 # Specify your gem's dependencies in kaminari.gemspec
-gemspec
+gem 'rails', '5.2.2.1'
 
+gemspec
 
 group :development, :test do
   gem "faker", "~> 1"
