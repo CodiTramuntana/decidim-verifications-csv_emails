@@ -8,3 +8,5 @@ test/dummy/tmp/
 examples/example.csv
 .rspec-failures
 spec/decidim_dummy_app
+Gemfile.lock
+
