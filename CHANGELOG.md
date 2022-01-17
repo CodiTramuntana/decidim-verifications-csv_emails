@@ -1,4 +1,7 @@
 = CHANGELOG
+== 0.0.9 PATCH (2022-01-13)
+- Security updates for nokogiri and puma
+
 == 0.0.8 PATCH (2021-08-10)
 - Update deps
 - Min Decidim version to 0.23
