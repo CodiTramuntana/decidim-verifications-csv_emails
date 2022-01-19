@@ -22,5 +22,11 @@ Gem::Specification.new do |s|
   s.add_dependency "decidim-verifications", ">=#{Decidim::Verifications::CsvEmail.decidim_version}"
   s.add_dependency "decidim-admin", ">=#{Decidim::Verifications::CsvEmail.decidim_version}"
 
+  # Security fixes
+  # nokogiri: GHSA-2rr5-8q37-2w7h
+  s.add_dependency "nokogiri", ">=1.12.5"
+  # puma: GHSA-48w2-rm65-62xx
+  s.add_dependency "puma", ">= 5.5.1"
+
   s.add_development_dependency "decidim-dev", ">=#{Decidim::Verifications::CsvEmail.decidim_version}"
 end
