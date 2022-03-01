@@ -1,10 +1,10 @@
 PATH
   remote: .
   specs:
-    decidim-verifications-csv_email (0.0.9)
-      decidim (>= 0.0.23)
-      decidim-admin (>= 0.0.23)
-      decidim-verifications (>= 0.0.23)
+    decidim-verifications-csv_email (0.0.10)
+      decidim (>= 0.25.2)
+      decidim-admin (>= 0.25.2)
+      decidim-verifications (>= 0.25.2)
       nokogiri (>= 1.12.5)
       puma (>= 5.5.1)
 
@@ -790,7 +790,7 @@ DEPENDENCIES
   bootsnap
   byebug (>= 10.0)
   decidim
-  decidim-dev (>= 0.0.23)
+  decidim-dev (>= 0.25.2)
   decidim-verifications-csv_email!
   faker (>= 1)
   letter_opener_web (~> 1.3)
