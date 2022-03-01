@@ -2,6 +2,7 @@
 
 == 0.0.10 PATCH (2022-03-01)
 - Upgrade to Decidim v0.25.2
+- Bump Ruby to v2.7.5
 
 == 0.0.9 PATCH (2022-01-13)
 - Security updates for nokogiri and puma
