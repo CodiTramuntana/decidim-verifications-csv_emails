@@ -9,11 +9,7 @@ gemspec
 group :development, :test do
   gem "actionview", ">= 6.0.4.8"
   gem "actionpack", ">= 6.0.4.8"
-  gem "actionmailer", ">= 6.0.4.8"
   gem "activestorage", ">= 6.0.4.7"
-  gem "activesupport", ">= 6.0.4.8"
-  gem "activemodel", ">= 6.0.4.8"
-  gem "activerecord", ">= 6.0.4.8"
   gem "decidim"
   gem "faker", ">= 1"
   gem "image_processing", ">= 1.12.2"

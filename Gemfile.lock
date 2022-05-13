@@ -787,13 +787,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionmailer (>= 6.0.4.8)
   actionpack (>= 6.0.4.8)
   actionview (>= 6.0.4.8)
-  activemodel (>= 6.0.4.8)
-  activerecord (>= 6.0.4.8)
   activestorage (>= 6.0.4.7)
-  activesupport (>= 6.0.4.8)
   bootsnap
   byebug (>= 10.0)
   decidim
