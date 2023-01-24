@@ -14,7 +14,7 @@ module Decidim
 
         def create
           @form = CsvEmailForm.from_params(params.merge(user: current_user))
-          ConfirmCsvEmailUserAuthorization.call(@authorization, @form) do
+          ConfirmCsvEmailUserAuthorization.call(@authorization, @form, session) do
             on(:ok) do
               flash[:notice] = t("authorizations.create.success", scope: "decidim.verifications.csv_email")
               redirect_to decidim_verifications.authorizations_path

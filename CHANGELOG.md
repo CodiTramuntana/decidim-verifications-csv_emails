@@ -1,5 +1,10 @@
 = CHANGELOG
 
+== 0.0.11 PATCH (2023-01-24)
+- Fix params in create action in AuthorizationsController because last upgrade changes was missing.
+- Add the unique_id method to handler to avoid conflicts with others verificators.
+- Minor changes to README and .gitignore
+
 == 0.0.10 PATCH (2022-03-01)
 - Upgrade to Decidim v0.25.2
 - Bump Ruby to v2.7.5

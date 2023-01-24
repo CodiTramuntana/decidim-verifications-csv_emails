@@ -14,6 +14,12 @@ module Decidim
         validates :email, presence: true
         validate :censed
 
+        def unique_id
+          Digest::SHA256.hexdigest(
+            "#{user&.decidim_organization_id}-#{user.email}-#{handler_name}-#{Rails.application.secrets.secret_key_base}"
+          )
+        end
+
         # Checks if the email belongs to the census
         def censed
           return if (email == user.email) && (census_for_user&.email == email)

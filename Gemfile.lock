@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    decidim-verifications-csv_email (0.0.10)
+    decidim-verifications-csv_email (0.0.11)
       decidim (>= 0.25.2)
       decidim-admin (>= 0.25.2)
       decidim-verifications (>= 0.25.2)
