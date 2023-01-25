@@ -8,6 +8,7 @@ module Decidim
           return broadcast(:invalid) unless form.valid?
 
           if confirmation_successful?
+            authorization.unique_id = form.unique_id
             authorization.grant!
             broadcast(:ok)
           else

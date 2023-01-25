@@ -12,7 +12,7 @@ module Decidim
         let(:random_email) { "#{Time.current.to_i}@example.org" }
         let(:attributes) do
           {
-            email: email,
+            email: user.email,
             user: user,
           }
         end
@@ -41,6 +41,17 @@ module Decidim
           let(:email) { "aaa.cccc" }
 
           it { is_expected.not_to be_valid }
+        end
+
+        context "unique_id is generated correctly" do
+          let(:handler_name) { "csv_email_form" }
+          let!(:unique_id) {
+            Digest::SHA256.hexdigest(
+              "#{user&.decidim_organization_id}-#{user.email}-#{handler_name}-#{Rails.application.secrets.secret_key_base}"
+            )
+          }
+
+          it { expect(unique_id).to eq(form.unique_id) }
         end
       end
     end
