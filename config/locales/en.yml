@@ -9,7 +9,7 @@ en:
         csv_email_authorization_handler:
           help:
             - Users enter their email to be verified
-      csv_email:
+      csv_email_handler:
         name: By email
       csv_email_authorization_handler:
         explanation: Authorize your user account against the Email

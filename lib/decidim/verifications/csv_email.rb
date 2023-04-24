@@ -4,7 +4,6 @@ require 'decidim/admin'
 require "decidim/verifications/csv_email/admin"
 require "decidim/verifications/csv_email/engine"
 require "decidim/verifications/csv_email/admin_engine"
-require "decidim/verifications/csv_email/workflow"
 
 module Decidim
   module Verifications

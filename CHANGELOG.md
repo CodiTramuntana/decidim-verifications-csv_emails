@@ -1,5 +1,10 @@
 = CHANGELOG
 
+== 0.1.0 MINOR (2023-04-24)
+- Redirect user to where she was after verification.
+- Refactor: Internal refactoring to simplify code, remove unneeded code.
+- Refactor: Rename form to CsvEmailAuthorizationHandler.
+
 == 0.0.11 PATCH (2023-01-24)
 - Fix params in create action in AuthorizationsController because last upgrade changes was missing.
 - Add the unique_id method to handler to avoid conflicts with others verificators.
