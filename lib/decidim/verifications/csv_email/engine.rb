@@ -18,8 +18,7 @@ module Decidim
         initializer "decidim_csv_email.add_authorization_handlers" do |_app|
           Decidim::Verifications.register_workflow(:csv_email_authorization_handler) do |workflow|
             workflow.form = "CsvEmailAuthorizationHandler"
-            # workflow.engine = Decidim::Verifications::CsvEmail::Engine
-            # workflow.admin_engine = Decidim::Verifications::CsvEmail::AdminEngine
+            workflow.admin_engine = Decidim::Verifications::CsvEmail::AdminEngine
           end
         end
 
