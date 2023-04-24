@@ -4,6 +4,8 @@
 - Redirect user to where she was after verification.
 - Refactor: Internal refactoring to simplify code, remove unneeded code.
 - Refactor: Rename form to CsvEmailAuthorizationHandler.
+- Translate to Catalan.
+- Make verification form to auto fill and auto submit.
 
 == 0.0.11 PATCH (2023-01-24)
 - Fix params in create action in AuthorizationsController because last upgrade changes was missing.
