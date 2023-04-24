@@ -57,7 +57,7 @@ RSpec.describe Decidim::Verifications::CsvEmail::Admin::CsvVerificationsControll
       before do
         sign_in user
 
-        5.times { FactoryBot.create :csv_email_datum, organization: organization }
+        FactoryBot.create_list :csv_email_datum, 5, organization: organization
         delete :destroy_all
       end
 

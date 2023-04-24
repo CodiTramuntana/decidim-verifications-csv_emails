@@ -15,8 +15,15 @@ module Decidim
           root to: "authorizations#new"
         end
 
+        initializer "decidim_csv_email.add_authorization_handlers" do |_app|
+          Decidim::Verifications.register_workflow(:csv_email_authorization_handler) do |workflow|
+            workflow.form = "CsvEmailAuthorizationHandler"
+            workflow.admin_engine = Decidim::Verifications::CsvEmail::AdminEngine
+          end
+        end
+
         config.to_prepare do
-          Dir.glob(Decidim::Verifications::CsvEmail::Engine.root + "app/decorators/**/*_decorator*.rb").each do |c|
+          Dir.glob("#{Decidim::Verifications::CsvEmail::Engine.root}/app/decorators/**/*_decorator*.rb").each do |c|
             require_dependency(c)
           end
         end

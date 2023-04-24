@@ -7,7 +7,7 @@ real users parameterised.
 
 This module provides a model `Decidim::Verifications::CsvEmail` to store users informations (email).
 
-It has an admin controller to upload CSV files with the information. When importing files all records are inserted and the duplicates are removed in a background job for performance reasons.
+It has an admin controller to upload CSV files with emails. When importing files all records are inserted and the duplicates are removed in a background job for performance reasons.
 
 ## Installation
 
@@ -24,6 +24,8 @@ bundle
 bin/rails decidim_verifications_csv_email:install:migrations
 bin/rails db:migrate
 ```
+
+Enable the CsvEmail verifier in the desired organization's `system/` panel.
 
 ## Run tests
 
