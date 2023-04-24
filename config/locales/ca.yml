@@ -1,0 +1,49 @@
+ca:
+  activemodel:
+    attributes:
+      csv_email_authorization_handler:
+        email: Correu electrònic
+  decidim:
+    authorization_handlers:
+      admin:
+        csv_email_authorization_handler:
+          help:
+            - Amb el correu electrònic de l'usuari
+      csv_email_handler:
+        name: Per correu electrònic
+      csv_email_authorization_handler:
+        explanation: Autoritza la teva compta d'usuari a través del correu electrònic
+        name: Per correu electrònic
+        type: Excel
+    verifications:
+      authorizations:
+        new:
+          send: Envia
+          sending: enviant
+          title: Verifica el meu usuari
+      csv_email:
+        admin:
+          csv_verifications:
+            create:
+              success: S'han importat %{count} correus electrònics (%{errors} errors)
+            destroy_all:
+              success: S'han eliminat tots els correus electrònics
+          destroy:
+            title: Elimina tots els correus electrònics
+            confirm: Elimina tots els correus electrònics no es pot desfer. N'estàs segur que vols continuar?
+          index:
+            data: Hi ha un total de %{count} registres. La data de l'última pujada fou el %{due_date}
+            empty: No hi ha cap correu electrònic a la BBDD. Utiliza el formulari de sota per importar-ne mitjançant un fitxer CSV.
+            title: Correus electrònics actuals
+          instructions:
+            body: Per fer-ho cal que entris al panell d'administració i pugis el CSV amb els correus electrònics
+            title: Cal que activis el mòdul per correu electrònic per aquesta organització
+          new:
+            info: 'Cal que sigui un fitxer en format CSV amb una única columna: email. La primera fila és la capçalera.'
+            file: Fitxer .csv file amb els correus electrònics
+            submit: Puja el CSV
+            title: Puja correus electrònics
+        errors:
+          messages:
+            not_in_csv: No es pot trobar el teu correu electrònic a la base de dades. Si el correu electrònic és correcte i el problema persisteix, si us plau, contacta amb un administrador.
+            not_same_email: El correu electrònic indicat no és el mateix que el de l'usuari de la sessió

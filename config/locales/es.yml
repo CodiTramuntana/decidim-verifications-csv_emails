@@ -16,6 +16,11 @@ es:
         name: Por correo electrónico
         type: Excel
     verifications:
+      authorizations:
+        new:
+          send: Enviar
+          sending: enviando
+          title: Verificar mi usuario
       csv_email:
         admin:
           csv_verifications:
@@ -34,18 +39,10 @@ es:
             body: Para hacerlo, debe ingresar la administración del sistema y agregar las autorizaciones de Excel o combinadas a la organización.
             title: Necesita activar el módulo de correo electrónico para esta organización
           new:
-            info: 'Debe ser un archivo generado por Excel y exportado con formato CSV con una columna: correo electrónico'
+            info: 'Debe ser un archivo generado por Excel y exportado con formato CSV con una columna: correo electrónico. La primera fila es la cabezera.'
             file: Archivo Excel .csv con datos de correos electrónicos
             submit: Subir archivo
             title: Cargar un nuevo correo electrónico
-        authorizations:
-          create:
-            error: No se puede verificar al usuario
-            success: Usuario verificado con éxito
-          new:
-            send: Enviar
-            sending: enviando
-            title: Verificar mi usuario
         errors:
           messages:
             not_in_csv: No pudimos encontrar su correo electrónico en nuestra base de datos de miembros. Si el correo electrónico ingresado es correcto y el problema persiste, contáctese con un administrador.

@@ -16,6 +16,11 @@ fr:
         name: Par email
         type: Excel
     verifications:
+      authorizations:
+        new:
+          send: Envoyer
+          sending: En transmission
+          title: Vérifier mon utilisateur
       csv_email:
         admin:
           csv_verifications:
@@ -38,14 +43,6 @@ fr:
             file: Fichier Excel .csv avec des données de courriels
             submit: Téléverser un fichier
             title: Télécharger un nouveau courriel
-        authorizations:
-          create:
-            error: Impossible de vérifier l'utilisateur
-            success: Utilisateur vérifié avec succès.
-          new:
-            send: Envoyer
-            sending: En transmission
-            title: Vérifier mon utilisateur
         errors:
           messages:
             not_in_csv: Nous n'avons pas trouvé votre email dans notre base de données de membres. Si l'e-mail entré est correct et que le problème persiste, contactez un administrateur.
