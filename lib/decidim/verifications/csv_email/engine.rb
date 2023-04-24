@@ -24,7 +24,7 @@ module Decidim
         end
 
         config.to_prepare do
-          Dir.glob(Decidim::Verifications::CsvEmail::Engine.root + "app/decorators/**/*_decorator*.rb").each do |c|
+          Dir.glob("#{Decidim::Verifications::CsvEmail::Engine.root}/app/decorators/**/*_decorator*.rb").each do |c|
             require_dependency(c)
           end
         end

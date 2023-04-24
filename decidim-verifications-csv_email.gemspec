@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email = ["isaac.mg@coditramuntana.com"]
   s.license = "AGPL-3.0"
   s.homepage = "https://github.com/decidim/decidim"
-  s.required_ruby_version = ">= 2.5.1"
+  s.required_ruby_version = ">= 2.7.5"
 
   s.name = "decidim-verifications-csv_email"
   s.summary = "Integration with CSV email verifications"
@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
 
   s.add_dependency "decidim", ">=#{Decidim::Verifications::CsvEmail.decidim_version}"
-  s.add_dependency "decidim-verifications", ">=#{Decidim::Verifications::CsvEmail.decidim_version}"
   s.add_dependency "decidim-admin", ">=#{Decidim::Verifications::CsvEmail.decidim_version}"
+  s.add_dependency "decidim-verifications", ">=#{Decidim::Verifications::CsvEmail.decidim_version}"
 
   # Security fixes
   # nokogiri: GHSA-2rr5-8q37-2w7h

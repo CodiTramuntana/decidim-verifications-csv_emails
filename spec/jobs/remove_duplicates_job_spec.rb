@@ -27,6 +27,7 @@ module Decidim
             described_class.new.perform org1
             expect(Decidim::Verifications::CsvEmail::CsvEmailDatum.count).to eq 8
           end
+
           it "removes register for org2" do
             described_class.new.perform org2
             expect(Decidim::Verifications::CsvEmail::CsvEmailDatum.count).to eq 7

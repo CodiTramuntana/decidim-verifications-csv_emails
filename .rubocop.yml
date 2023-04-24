@@ -1,15 +1,14 @@
 ---
+require: rubocop-rspec
 
 AllCops:
   Exclude:
     - "development_app/**/*"
     - "spec/decidim_dummy_app/**/*"
-
+  NewCops: enable
   DisplayCopNames: true
-
   DisplayStyleGuide: true
-
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.7
 
 Metrics:
   Enabled: false
@@ -22,6 +21,9 @@ Layout/ExtraSpacing:
 
 Lint/InterpolationCheck:
   Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4
 
 Style/AsciiComments:
   Enabled: false
@@ -52,3 +54,6 @@ Style/SafeNavigation:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/SlicingWithRange:
+  Enabled: false

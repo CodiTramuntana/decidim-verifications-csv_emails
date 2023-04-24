@@ -22,9 +22,7 @@ module Decidim
 
         def process_row(row)
           user_email = row[0]
-          if user_email.present?
-            values << row
-          end
+          values << row if user_email.present?
         end
       end
     end

@@ -7,24 +7,16 @@ ruby RUBY_VERSION
 gemspec
 
 group :development, :test do
-  gem "actionview", ">= 6.0.4.8"
-  gem "actionpack", ">= 6.0.4.8"
-  gem "activestorage", ">= 6.0.4.7"
+  gem "bootsnap"
+  gem "byebug", ">= 10.0", platform: :mri
   gem "decidim"
   gem "faker", ">= 1"
-  gem "image_processing", ">= 1.12.2"
-  gem "byebug", ">= 10.0", platform: :mri
-  gem 'bootsnap'
-  gem 'listen'
-  gem 'social-share-button'
-  gem "railties", ">= 6.0.4.8"
-  gem "puma", ">= 5.6.4"
-  gem "doc2text", ">=0.4.5"
-  gem "nokogiri",">= 1.13.4"
-  gem "rails",">= 6.0.4.8"
+  gem "letter_opener_web"
+  gem "listen"
+  gem "rails", ">= 6.0.4.8"
 end
 
 group :development do
-  gem "letter_opener_web", "~> 1.3"
-  gem "web-console", "~> 3.5"
+  gem "rubocop" # , "~> 1.28.0"
+  gem "rubocop-rails" # , "~> 1.28.0"
 end

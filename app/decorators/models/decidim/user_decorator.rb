@@ -8,6 +8,7 @@ Decidim::User.class_eval do
                          .search_user_email(organization, email)
 
     return if @census_for_user.blank?
+
     @authorization = Decidim::Authorization.create(user: self, name: "csv_email_authorization_handler")
     @authorization.grant!
   end
