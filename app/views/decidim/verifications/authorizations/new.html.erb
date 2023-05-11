@@ -14,7 +14,7 @@
               <% if lookup_context.exists?(handler.to_partial_path, [], true) %>
                 <%= render partial: handler.to_partial_path, locals: { handler: handler, form: form } %>
               <% else %>
-                <% form.object.email= current_user.email %>
+                <% form.object.email= current_user.email  if handler.handler_name == "csv_email_authorization_handler" %>
                 <%= form.all_fields %>
               <% end %>
 

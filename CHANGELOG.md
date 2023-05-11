@@ -1,6 +1,11 @@
 = CHANGELOG
 
+== 0.1.1 PATCH (2023-05-11)
+- Make module work together with other verificators.
+
 == 0.1.0 MINOR (2023-04-24)
+(Crashes when enabled together with other verificators)
+
 - Redirect user to where she was after verification.
 - Refactor: Internal refactoring to simplify code, remove unneeded code.
 - Refactor: Rename form to CsvEmailAuthorizationHandler.
@@ -28,4 +33,3 @@
 == 0.0.5 BETA/MINOR (2018-11-26)
 - Upgrade to Decidim v0.15.0
 - Use more optimist versioning for future Decidim versions.
-
